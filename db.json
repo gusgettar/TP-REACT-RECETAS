@@ -1,0 +1,18 @@
+{
+  "recetas": [
+    {
+      "id": 1,
+      "nombreReceta": "tarta de jamon y queso",
+      "tipo": "salada",
+      "ingredientes": "Masa de tarta, jamon, queso, cebolla rehogada, pimiento morron, huevos",
+      "instrucciones": "Para hacer una tarta de jamón y queso, primero precalienta el horno a 180°C. Coloca una tapa de masa en un molde para tarta, ajustándola bien y pinchándola con un tenedor. Corta 200 g de jamón y 200 g de queso en trozos pequeños, distribúyelos sobre la masa. En un bol, bate 3 huevos con 200 ml de crema de leche, agrega sal, pimienta y nuez moscada a gusto, y vierte esta mezcla sobre el jamón y queso. Cubre con la segunda tapa de masa, sella bien los bordes y haz algunos cortes pequeños para que salga el vapor. Hornea durante 30-40 minutos o hasta que la masa esté dorada y crujiente. Deja reposar unos minutos antes de servir."
+    },
+    {
+      "nombreReceta": "Carrot Cake",
+      "tipo": "Dulce",
+      "ingredientes": "Para preparar esta Carrot Cake necesitas los siguientes ingredientes: 2 tazas de harina de trigo, 2 cucharaditas de polvo para hornear, 1/2 cucharadita de bicarbonato de sodio, 1/2 cucharadita de sal, 1 cucharadita de canela en polvo, 1/2 cucharadita de nuez moscada, 1/2 taza de azúcar blanca, 1/2 taza de azúcar morena, 3/4 taza de aceite vegetal, 4 huevos, 2 cucharaditas de extracto de vainilla, 2 tazas de zanahorias ralladas, 1/2 taza de nueces picadas (opcional) y 1/2 taza de pasas (opcional).",
+      "instrucciones": "Precalienta el horno a 180°C (350°F) y engrasa un molde redondo. En un bol grande, mezcla la harina, el polvo para hornear, el bicarbonato, la sal, la canela y la nuez moscada. En otro recipiente, bate los huevos junto con el azúcar blanca y morena, añade el aceite y la vainilla, batiendo hasta integrar. Incorpora los ingredientes secos a la mezcla húmeda, mezclando suavemente hasta obtener una masa homogénea. Añade las zanahorias ralladas y, si lo deseas, las nueces y pasas. Vierte la masa en el molde y hornea durante 35-40 minutos o hasta que al insertar un palillo, este salga limpio. Deja enfriar antes de desmoldar y servir. Puedes decorar con un glaseado de queso crema si lo prefieres.",
+      "id": 2
+    }
+  ]
+}
