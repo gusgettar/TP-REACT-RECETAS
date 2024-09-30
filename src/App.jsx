@@ -19,7 +19,8 @@ const App = () => {
       <Route exact path='/' element={<Inicio></Inicio>}></Route>
       <Route exact path='/login' element={<Login></Login>}> </Route>
       <Route exact path='/administrador' element={<Administrador></Administrador>}></Route>
-      <Route exact path='/administrador/crear' element={<FormularioReceta></FormularioReceta>}></Route>
+      <Route exact path='/administrador/crear' element={<FormularioReceta titulo='Nueva receta' creandoReceta={true}></FormularioReceta>}></Route>
+      <Route exact path='/administrador/editar/:id' element={<FormularioReceta titulo='Editar Receta' creandoReceta={false}></FormularioReceta>}></Route>
     </Routes>
     <Footer></Footer>
     </BrowserRouter>

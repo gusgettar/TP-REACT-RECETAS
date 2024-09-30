@@ -1,9 +1,32 @@
 import { Table } from "react-bootstrap";
+import { leerRecetasAPI } from "../../helpers/queries";
+import ItemReceta from "./Recetas/ItemReceta";
+import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 
+
+
 const Administrador = () => {
+  const [receta, setReceta] = useState([])
+    
+    const cargarRecetasAPI = async ()=>{
+    const respuesta = await leerRecetasAPI()
+    
+    if(respuesta.status===200){
+        const productoEncontrado = await respuesta.json()
+        
+        setReceta(productoEncontrado)
+        
+        
+       }
+    }
+
+    useEffect(()=>{
+        cargarRecetasAPI()
+    },[])
+
     return (
         <section  className="mainSection">
            <div className="d-flex justify-content-between align-items-center mt-5">
@@ -16,30 +39,16 @@ const Administrador = () => {
         <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>Nº</th>
+            <th>Titulo</th>
+            <th>Categoria</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan={2}>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {
+            receta.map((recetas,posicion)=>(<ItemReceta recetas={recetas} key={recetas.id} fila={posicion + 1} setListaRecetas={setReceta}></ItemReceta>))
+          }
         </tbody>
       </Table>
         </section>

@@ -1,22 +1,50 @@
 import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { guardarRecetasAPI } from "../../../helpers/queries";
+import { buscarRecetasAPI, guardarRecetasAPI, modificarDatosAPI } from "../../../helpers/queries";
+import { useParams } from "react-router-dom";
 
 
 
-const FormularioReceta = () => {
+const FormularioReceta = ({titulo, creandoReceta}) => {
     const {register, handleSubmit, formState: {errors}, reset, setValue} = useForm()
+    const {id} = useParams()
     
     const onSubmit = async (receta)=>{
-      const respuesta = guardarRecetasAPI(receta)
-      
+      if(creandoReceta){
+        const respuesta = await guardarRecetasAPI(receta)
         reset()
+
+      }
+      else{
+        const respuesta = await modificarDatosAPI(receta,id)
+        reset()
+      }
+      
       
     }
+    const cargarRecetasAPI = async ()=>{
+      const respuesta = await buscarRecetasAPI(id)
+      if(respuesta.status===200){
+
+        const recetaEncontrada = await respuesta.json()
+        setValue('nombreReceta', recetaEncontrada.nombreReceta)
+        setValue('tipo', recetaEncontrada.tipo)
+        setValue('ingredientes', recetaEncontrada.ingredientes)
+        setValue('instrucciones', recetaEncontrada.instrucciones)
+      }
+    }
+
+    useEffect(()=>{
+  if(!creandoReceta){
+    cargarRecetasAPI()
+  }
+    },[])
+
+    
     return (
         <section className="container mainSection">
-            <h1>NUEVAS RECETAS</h1>
+            <h1>{titulo}</h1>
         <Form onSubmit={handleSubmit(onSubmit)}>
            
         <Form.Group className="mb-3" controlId="nombre">
