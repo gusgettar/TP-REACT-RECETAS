@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navegacion = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aquí iría la lógica para manejar el login
     console.log('Email:', email);
     console.log('Password:', password);
+    navegacion('*')
   };
 
   return (
