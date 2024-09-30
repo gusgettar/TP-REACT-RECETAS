@@ -9,6 +9,7 @@ import Login from './components/pages/Login';
 import Administrador from './components/pages/Administrador';
 import FormularioReceta from './components/pages/Recetas/FormularioReceta';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import CardRecetasCompletas from './components/pages/Recetas/CardRecetasCompletas';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
     <Routes>
       <Route exact path='/' element={<Inicio></Inicio>}></Route>
       <Route exact path='/login' element={<Login></Login>}> </Route>
+      <Route exact path='/recetaCompleta' element={<CardRecetasCompletas></CardRecetasCompletas>}> </Route>
       <Route exact path='/administrador' element={<Administrador></Administrador>}></Route>
       <Route exact path='/administrador/crear' element={<FormularioReceta titulo='Nueva receta' creandoReceta={true}></FormularioReceta>}></Route>
       <Route exact path='/administrador/editar/:id' element={<FormularioReceta titulo='Editar Receta' creandoReceta={false}></FormularioReceta>}></Route>

@@ -32,6 +32,7 @@ const FormularioReceta = ({titulo, creandoReceta}) => {
         setValue('tipo', recetaEncontrada.tipo)
         setValue('ingredientes', recetaEncontrada.ingredientes)
         setValue('instrucciones', recetaEncontrada.instrucciones)
+        setValue('imagen', recetaEncontrada.imagen)
       }
     }
 
@@ -105,6 +106,21 @@ const FormularioReceta = ({titulo, creandoReceta}) => {
             }
           })} />
           {errors.instrucciones && <p>{errors.instrucciones.message}</p> }
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="Imagen">
+          <Form.Label>imagen</Form.Label>
+          <Form.Control as="textarea" placeholder="Ejemplo. http://recetas.com.ar/receta.jpeg" {...register("imagen",{
+            required: "Las imagenes son obligatorias",
+            minLength: {
+                value: 50,
+                message: "Debe ingresar 50 caracteres como minimo"
+            },
+            maxLength: {
+                value: 1000,
+                message: "Debe ingresar como maximo 1000 caracteres"
+            }
+          })} />
+          {errors.imagen && <p>{errors.imagen.message}</p> }
           </Form.Group>
         
         <Button variant="primary" type="submit">

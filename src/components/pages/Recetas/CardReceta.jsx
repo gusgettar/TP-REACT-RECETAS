@@ -1,12 +1,12 @@
 import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-import receta from '../../../assets/receta.jpg'
 const CardReceta = ({recetas}) => {
     return (
         <Col md={4} lg={3} className="mb-3">
         <Card className='h-100'>
             <div>
-<img src={receta} className='card-img' alt="" />
+<img src={recetas.imagen} className='card-img' alt="" />
      
             </div>
         <Card.Body>
@@ -16,7 +16,7 @@ const CardReceta = ({recetas}) => {
             
             
           </Card.Text>
-          <Button variant="primary">IR A LA RECETA COMPLETA</Button>
+          <Link className="btn btn-primary  " state={{recetas}} to={`/recetaCompleta`}>IR A LA RECETA COMPLETA</Link>
         </Card.Body>
       </Card>
         </Col>
