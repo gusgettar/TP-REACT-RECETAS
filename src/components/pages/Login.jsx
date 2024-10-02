@@ -16,7 +16,9 @@ const Login = () => {
   };
 
   return (
-    <Container className="mt-5 mainSection">
+    <div className=' mainSection gradient'>
+
+    <Container className="mt-5">
       <Row className="justify-content-md-center">
         <Col md={4}>
           <h2>Login</h2>
@@ -29,7 +31,7 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-              />
+                />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword" className="mt-3">
@@ -40,7 +42,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-              />
+                />
             </Form.Group>
 
             <Button variant="primary" type="submit" className="mt-3">
@@ -50,6 +52,7 @@ const Login = () => {
         </Col>
       </Row>
     </Container>
+                </div>
   );
 };
 
