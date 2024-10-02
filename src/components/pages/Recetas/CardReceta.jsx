@@ -11,8 +11,10 @@ const CardReceta = ({recetas}) => {
             </div>
         <Card.Body>
           <Card.Title>{recetas.nombreReceta.toUpperCase()}</Card.Title>
+          <hr />
           <Card.Text>
-            Receta tipo: <strong>{recetas.tipo}</strong>
+            <strong>Receta tipo: </strong>
+            <span>{recetas.tipo}</span>
             
             
           </Card.Text>

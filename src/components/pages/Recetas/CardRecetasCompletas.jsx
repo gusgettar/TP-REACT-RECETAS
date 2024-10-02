@@ -14,18 +14,27 @@ const CardRecetasCompletas = () => {
             <Card style={{width: '500px'}}>
                 <div>
     <img src={recetas.imagen} style={{width: '100%', height: '400px',objectFit: 'contain'}} alt="" />
-         
-                </div>
+         </div>
             <Card.Body>
-              <Card.Title>{recetas.nombreReceta.toUpperCase()}</Card.Title>
+              <Card.Title className='fs-3 text-center'>{recetas.nombreReceta.toUpperCase()}</Card.Title>
+              <hr />
               <Card.Text>
-                Receta tipo: <strong>{recetas.tipo}</strong>
+                <strong className='fs-5'>
+                Receta tipo: 
+                </strong>
+                <span className='fs-5'> {recetas.tipo}</span>
               </Card.Text>
               <Card.Text>
-                Receta Ingredientes: <strong>{recetas.ingredientes}</strong>
+                <strong className='fs-5'>
+                Receta Ingredientes: 
+                </strong>
+                <span>  {recetas.ingredientes}</span>
               </Card.Text>
               <Card.Text>
-                Receta Instrucciones: <strong>{recetas.instrucciones}</strong>
+                <strong className='fs-5'>
+                Receta Instrucciones: 
+                </strong>
+                <span>  {recetas.instrucciones}</span>
               </Card.Text>
               
             </Card.Body>

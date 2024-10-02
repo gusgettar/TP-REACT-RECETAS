@@ -3,6 +3,8 @@ import { leerRecetasAPI } from "../../helpers/queries";
 import ItemReceta from "./Recetas/ItemReceta";
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+
 
 
 
@@ -18,9 +20,14 @@ const Administrador = () => {
         const productoEncontrado = await respuesta.json()
         
         setReceta(productoEncontrado)
-        
-        
-       }
+        }
+        else{
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: `En estos momentos no podemos mostrar las recetas, intenta en breve.`,
+            icon: "error"
+          });
+        }
     }
 
     useEffect(()=>{

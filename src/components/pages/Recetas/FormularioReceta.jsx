@@ -2,23 +2,52 @@ import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { buscarRecetasAPI, guardarRecetasAPI, modificarDatosAPI } from "../../../helpers/queries";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+
 
 
 
 const FormularioReceta = ({titulo, creandoReceta}) => {
     const {register, handleSubmit, formState: {errors}, reset, setValue} = useForm()
     const {id} = useParams()
+    const navegacion = useNavigate()
     
     const onSubmit = async (receta)=>{
       if(creandoReceta){
         const respuesta = await guardarRecetasAPI(receta)
         reset()
 
+        if(respuesta.status === 201){
+          
+          console.log('se creo el producto')
+          reset();
+          Swal.fire({
+            title: "La receta fue cargada",
+            text: `La receta ${receta.nombreReceta}, fue creada correctamente.`,
+            icon: "success"
+          });
+        }else{
+          
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: `No se pudo cargar la receta${receta.nombreReceta}, intente esta operación en unos minutos `,
+            icon: "error"
+          });
+        }
+
       }
       else{
         const respuesta = await modificarDatosAPI(receta,id)
         reset()
+        if(respuesta.status===200){
+          Swal.fire({
+            title: "Receta modificada",
+            text: `La receta ${receta.nombreReceta}, fue modificada correctamente.`,
+            icon: "success"
+          });
+          navegacion('/administrador')
+        }
       }
       
       
@@ -34,6 +63,13 @@ const FormularioReceta = ({titulo, creandoReceta}) => {
         setValue('instrucciones', recetaEncontrada.instrucciones)
         setValue('imagen', recetaEncontrada.imagen)
       }
+      else{
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `No se pudo obtener la receta, intente esta operación en unos minutos `,
+          icon: "error"
+        });
+      }
     }
 
     useEffect(()=>{
@@ -44,7 +80,7 @@ const FormularioReceta = ({titulo, creandoReceta}) => {
 
     
     return (
-        <section className="mainSection gradient px-4 pt-4">
+        <section className="mainSection gradient px-4 p-5">
             <h1>{titulo}</h1>
         <Form onSubmit={handleSubmit(onSubmit)}>
            
