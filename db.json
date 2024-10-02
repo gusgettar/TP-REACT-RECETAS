@@ -1,3 +1,12 @@
 {
-  "recetas": []
+  "recetas": [
+    {
+      "nombreReceta": "tarta de jamon y queso",
+      "tipo": "Salada",
+      "ingredientes": "Para preparar la tarta de jamón y queso necesitarás: 2 discos de masa para tarta, 200 g de jamón cocido en fetas, 200 g de queso (puede ser muzarella, gouda o un queso a elección), 3 huevos, 200 ml de crema de leche, sal, pimienta y nuez moscada al gusto.",
+      "instrucciones": "Precalentar el horno a 180°C. Colocar uno de los discos de masa en un molde para tarta previamente enmantecado. Acomodar las fetas de jamón y queso en capas sobre la masa. En un bowl, batir los huevos con la crema de leche, agregar sal, pimienta y nuez moscada, y verter la mezcla sobre el jamón y el queso. Cubrir con el segundo disco de masa, sellar los bordes y pinchar la superficie con un tenedor. Llevar al horno durante 30-40 minutos o hasta que la masa esté dorada. Dejar enfriar unos minutos antes de servir.",
+      "imagen": "https://alicante.com.ar/wp-content/uploads/2022/06/87_receta.jpg",
+      "id": 1
+    }
+  ]
 }

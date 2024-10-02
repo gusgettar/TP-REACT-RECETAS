@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-       <p className='text-center'> &copy; Rolling Code School - Todos los derechos reservados  </p>
+       <p className='text-center gradient footer'> &copy; Rolling Code School - Todos los derechos reservados  </p>
     );
 };
 

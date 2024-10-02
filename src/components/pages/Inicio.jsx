@@ -23,7 +23,7 @@ const Inicio = () => {
     },[])
 
     return (
-        <section className='mainSection'>
+        <section className='mainSection gradient'>
             <img className='banner' src="https://secrecyjewels.es/blog/wp-content/uploads/2022/08/blogs-de-cocina.jpg" alt="Imagen principal blog de recetas" />
             <Container className='mt-5'>
                 <h1>Nuestras Recetas</h1>

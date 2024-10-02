@@ -4,14 +4,16 @@ import { useLocation } from 'react-router-dom';
 
 
 const CardRecetasCompletas = () => {
+  
     const location = useLocation()
     const {recetas} = location.state
     return (
-        
+        <span className='d-flex justify-content-center gradient'>
+
             <Col md={4} lg={3} className="mb-3">
-            <Card className='h-100'>
+            <Card style={{width: '500px'}}>
                 <div>
-    <img src={recetas.imagen} className='card-img' alt="" />
+    <img src={recetas.imagen} style={{width: '100%', height: '400px',objectFit: 'contain'}} alt="" />
          
                 </div>
             <Card.Body>
@@ -29,6 +31,7 @@ const CardRecetasCompletas = () => {
             </Card.Body>
           </Card>
             </Col>
+        </span>
         
     );
 };

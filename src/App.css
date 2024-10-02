@@ -7,6 +7,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  
 }
 
 .mainSection{
@@ -23,4 +24,14 @@
   width: 100%;
   height: 400px;
   object-fit: cover;
+}
+
+.gradient{
+
+  background-image: radial-gradient( circle 918px at 13.1% 25.5%,  rgba(249,107,107,1) 0%, rgba(247,231,172,1) 48.9%, rgba(173,247,172,1) 90% );
+}
+
+.footer{
+  padding-bottom: 40px;
+  height: 50px;
 }

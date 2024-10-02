@@ -44,7 +44,7 @@ const FormularioReceta = ({titulo, creandoReceta}) => {
 
     
     return (
-        <section className="container mainSection">
+        <section className="mainSection gradient px-4 pt-4">
             <h1>{titulo}</h1>
         <Form onSubmit={handleSubmit(onSubmit)}>
            

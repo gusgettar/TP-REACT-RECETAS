@@ -28,7 +28,7 @@ const Administrador = () => {
     },[])
 
     return (
-        <section  className="mainSection">
+        <section  className="mainSection gradient">
            <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Recetas Disponibles</h1>
         <Link className="btn btn-primary" to='/administrador/crear'>

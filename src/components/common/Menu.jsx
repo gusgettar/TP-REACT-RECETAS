@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body-tertiary gradient">
         <Container>
           <Navbar.Brand as={Link} to='/'>
             <img
