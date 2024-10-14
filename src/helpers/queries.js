@@ -1,4 +1,4 @@
-const URLreceta = "http://localhost:4000/api/recetas"
+const URLreceta = import.meta.env.VITE_API_RECETAS
 
 //SOLICITUD GET
 
