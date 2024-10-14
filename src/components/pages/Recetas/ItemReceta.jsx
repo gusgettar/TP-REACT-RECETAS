@@ -7,7 +7,7 @@ import { borrarDatosAPI, leerRecetasAPI } from '../../../helpers/queries';
 const ItemReceta = ({recetas,fila,setListaRecetas}) => {
    
     const borrarReceta = async ()=>{
-    const respuesta = await borrarDatosAPI(recetas.id)
+    const respuesta = await borrarDatosAPI(recetas._id)
     if(respuesta.status===200){
         console.log("producto borrado")
     }
