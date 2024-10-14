@@ -1,4 +1,4 @@
-const URLreceta = "http://localhost:3000/recetas"
+const URLreceta = "http://localhost:4000/api/recetas"
 
 //SOLICITUD GET
 

@@ -25,7 +25,7 @@ const ItemReceta = ({recetas,fila,setListaRecetas}) => {
             <td>{recetas.nombreReceta}</td>
             <td>{recetas.tipo}</td>
             <td>
-            <Link className="btn btn-warning me-lg-2" to={`/administrador/editar/${recetas.id}`}>
+            <Link className="btn btn-warning me-lg-2" to={`/administrador/editar/${recetas._id}`}>
             <i className="bi bi-pencil-square"></i>
             </Link>
             <Button onClick={borrarReceta} variant="danger">
