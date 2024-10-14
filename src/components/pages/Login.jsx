@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { login } from '../../helpers/queries';
+import { useForm } from 'react-hook-form';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
+const Login = ({setUsuarioLogueado}) => {
+const {handleSubmit,register} = useForm()
+  
   const navegacion = useNavigate()
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí iría la lógica para manejar el login
-    console.log('Email:', email);
-    console.log('Password:', password);
-    navegacion('*')
+  const onSubmit = async (usuario) => {
+    
+    try {
+    const respuesta = await login(usuario)
+    if(respuesta.status===200){
+      const datos = await respuesta.json()
+      setUsuarioLogueado({email: datos.email})
+      sessionStorage.setItem('userKey',JSON.stringify({email: datos.email}))
+      navegacion("/administrador")
+    }
+    } catch (error) {
+      console.error(error)
+    }
+    
+        
   };
 
   return (
@@ -22,15 +34,14 @@ const Login = () => {
       <Row className="justify-content-md-center">
         <Col md={4}>
           <h2>Login</h2>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 required
+                {...register('email')}
                 />
             </Form.Group>
 
@@ -39,9 +50,8 @@ const Login = () => {
               <Form.Control
                 type="password"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 required
+                {...register('password')}
                 />
             </Form.Group>
 

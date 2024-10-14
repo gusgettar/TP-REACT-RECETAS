@@ -1,4 +1,5 @@
 const URLreceta = import.meta.env.VITE_API_RECETAS
+const URLusuarios = import.meta.env.VITE_API_USUARIOS
 
 //SOLICITUD GET
 
@@ -32,6 +33,23 @@ export const guardarRecetasAPI = async (nuevaReceta)=>{
                 "Content-Type":"application/json"
             },
             body: JSON.stringify(nuevaReceta)
+        })
+        return respuesta
+    }catch(error){
+        console.error(error)
+        return false
+    }
+}
+
+export const login = async (usuario)=>{
+    console.log(JSON.stringify(usuario))
+    try{
+        const respuesta = await fetch(URLusuarios,{
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(usuario)
         })
         return respuesta
     }catch(error){
